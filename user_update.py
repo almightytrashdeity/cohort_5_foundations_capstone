@@ -18,3 +18,4 @@ def update_user(values,to_update):
         """
     cursor.execute(query,values)
     connection.commit()
+    #update_user(values, to_update)

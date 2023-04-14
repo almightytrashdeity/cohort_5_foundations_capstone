@@ -13,13 +13,13 @@ def create_results(user_id, assessment_id, score, assessment_date, admin_id):
     connection.commit()
     print(f'Success: Results was Successfully added!!!!')
 
-def add():
+def add_results():
     user_id = input('Please enter user ID: ')
     assessment_id = input('Please enter assessment number: ')
     score = input('Please enter score recived 0-4: ')
     assessment_date = input('Please enter the date of the assessment taken yyyy-mm-dd: ')
-    admin_id = input('Please enter Admin ID:')
+    admin_id = input('Please enter Admin ID: ')
 
     create_results(user_id, assessment_id, score, assessment_date, admin_id)
 
-add()
+#add()

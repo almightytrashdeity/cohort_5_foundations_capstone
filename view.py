@@ -54,7 +54,7 @@ def view_active():
         hire_date = row[8] if row[8]!= None else ""
         user_type = row[9] if row[9]!= None else ""
 
-        print(f'\n {user_id}. \n {first_name} {last_name} \n {phone} \n {email}\n {date_created} {hire_date} {user_type}\n')
+        print(f'\n {user_id}. \n {first_name} {last_name} \n {phone} \n {email}\n {password} \n {active} \n {date_created} \n {hire_date} \n {user_type}\n')
     
 def view_user(new_name):
         
@@ -62,3 +62,17 @@ def view_user(new_name):
     search = "SELECT * FROM Users WHERE first_name Like ?;"
     rows = cursor.execute(search,(new_name,)).fetchone()
     return rows
+
+def view_comp():
+    view = "SELECT * FROM Assessments WHERE Assessments.competency_id = Competencies.competency_id AND WHERE Assessments.assessment_id = AssessmentResults.assessment_id AND WHERE AssessmentResults.user_id = Users.user_id WHERE Users.user_id = ?"
+    rows = cursor.execute(view).fetchall()
+    return rows
+
+def view_assess():
+    view = "SELECT * FROM Assessments WHERE Assessments.assessment_id = AssessmentResults.assessment_id AND WHERE AssessmentResults.user_id = Users.user_id WHERE Users.user_id = ?"
+    rows = cursor.execute(view).fetchall()
+
+#view_all()
+#view_active()
+#view_user()
+#search_name()

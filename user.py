@@ -49,4 +49,4 @@ def prompt_update_user():
     print('Your update was successful. ')
     view_user(first_name)
     input('press enter to continue. ')
-user_menu()
+#user_menu()
