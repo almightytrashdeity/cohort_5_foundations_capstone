@@ -13,7 +13,7 @@ def login():
     result = cursor.execute('SELECT user_id, password FROM Users WHERE email = ? AND active = 1', (username,)).fetchone()
     if not result:
         print('Wrong username, please try again')
-    hashed_pw = result[1].encode()
+    hashed_pw = result.encode()
     encoded_pw = password.encode('utf-8')
     check_password = bcrypt.checkpw(encoded_pw, hashed_pw)
     if check_password:
