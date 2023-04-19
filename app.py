@@ -27,7 +27,7 @@ def menu(user_type):
                 password = input("Enter your password: ")
                 password_check = cursor.execute("SELECT password FROM Users WHERE email = ?", (email,)).fetchone()
                 if password_check == None:
-                    print("wrong email")
+                    print("Wrong email")
                     continue
                 elif password_check == password:
                     if user_type == "user":
